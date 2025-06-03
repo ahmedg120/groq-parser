@@ -15,7 +15,7 @@ ALLOWED_EXTENSIONS = {'pdf'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Initialize Groq client
-client = Groq(api_key="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")
+client = Groq(api_key="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")
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
