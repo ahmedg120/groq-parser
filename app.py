@@ -45,7 +45,7 @@ Instructions:
 Expected JSON structure:
 {{
     "name": "First Last",  // Only first and second name.
-    "location": "Governorate, Country", //e.g.: Cairo, Egypt - Madrid, spain
+    "location": "Governorate Country", //e.g.: Cairo Egypt - Madrid spain
     "email": "example@example.com",  // Must be lowercase.
     "education": ["Degree, Institution, Year"] all in one line Example Bachelor Degree in Computer Science, Helwan University, 2021 - 2025 GPA 3.2,
     "skills": ["Only", "Technical", "Skills", "10 Maxiumum"],  // No soft skills. Only technologies, tools, languages, or platforms.
@@ -97,9 +97,11 @@ def process_resume():
         
         parsed_data = extract_resume_data(pdf_path)
 
-        
 
-        return jsonify(parsed_data)
+        response = {
+            "data": parsed_data
+        }
+        return jsonify(response)
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -110,3 +112,10 @@ def process_resume():
 if __name__ == '__main__':
 
     app.run(host='0.0.0.0', port=8080)
+
+
+'''
+    "Weaknesses_in_Resume": "Can't be null, Generate 2–4 full sentences that clearly mention 3–5 weaknesses visible in the resume. Only include specific and fixable issues that are obvious in the text, such as missing contact details, unclear project descriptions, outdated skills, or lack of metrics. Avoid assumptions.",
+    "Technical_Career_Tips": "Can't be null, Generate 2–4 concise and practical sentences giving 3–5 technical suggestions based strictly on the skills already listed. Mention adjacent tools or languages to learn, certifications to consider, or improvements to current projects or tech stack. No general advice or guessing.",
+    "resume_score": 0,  // Return a whole number from 0 to 100 based ONLY on the following strict rules. Do not guess or add partial credit. Do not include any explanations.
+'''
