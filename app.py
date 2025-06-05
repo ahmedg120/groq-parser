@@ -45,7 +45,7 @@ Instructions:
 Expected JSON structure:
 {{
     "name": "First Last",  // Only first and second name.
-    "location": "Governorate Country", //e.g.: Cairo Egypt - Madrid spain
+    "location": "Governorate, Country", //e.g.: Cairo, Egypt - Madrid, spain
     "email": "example@example.com",  // Must be lowercase.
     "education": ["Degree, Institution, Year"] all in one line Example Bachelor Degree in Computer Science, Helwan University, 2021 - 2025 GPA 3.2,
     "skills": ["Only", "Technical", "Skills", "10 Maxiumum"],  // No soft skills. Only technologies, tools, languages, or platforms.
